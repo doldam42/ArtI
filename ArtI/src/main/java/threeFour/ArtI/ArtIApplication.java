@@ -1,13 +1,13 @@
-package threeFour.OpenDeliveryService;
+package threefour.ArtI;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class OpenDeliveryServiceApplication {
+public class ArtiApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(OpenDeliveryServiceApplication.class, args);
+		SpringApplication.run(ArtiApplication.class, args);
 	}
 
 }
