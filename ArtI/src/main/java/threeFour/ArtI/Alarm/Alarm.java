@@ -1,4 +1,4 @@
-package threeFour.ArtI.book;
+package threeFour.ArtI.Alarm;
 
 import jakarta.persistence.*;
 import lombok.*;
@@ -12,22 +12,13 @@ import java.time.format.DateTimeFormatter;
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
 @Builder
 @AllArgsConstructor
-@Table(name="ArtIBook")
-public class Book {
-
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+@Table(name="Alarm")
+public class Alarm {
 
     @NotNull
     @Column(columnDefinition = "TEXT", nullable = false)
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private String keyword;
-
-    @NotNull
-    @Column(nullable = false)
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long ImgIDs;
+    private String text;
 
     private String createdDate = LocalDateTime.now().format(DateTimeFormatter.ofPattern("yyyy.MM.dd HH:mm"));
 }
