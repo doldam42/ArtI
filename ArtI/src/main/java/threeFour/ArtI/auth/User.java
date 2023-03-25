@@ -17,12 +17,10 @@ public class User {
 
     @NotNull
     @Column(nullable = false)
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private String pwd;
 
     @NotNull
     @Column(columnDefinition = "TEXT", nullable = false)
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private String userName;
 
     @NotNull

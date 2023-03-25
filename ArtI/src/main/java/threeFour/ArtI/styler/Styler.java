@@ -21,12 +21,10 @@ public class Styler {
 
     @NotNull
     @Column(nullable = false)
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long originImgId;
 
     @NotNull
     @Column(nullable = false)
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long createdImgId;
 
     private String createdDate = LocalDateTime.now().format(DateTimeFormatter.ofPattern("yyyy.MM.dd HH:mm"));

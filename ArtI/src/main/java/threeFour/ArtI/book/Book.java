@@ -21,12 +21,10 @@ public class Book {
 
     @NotNull
     @Column(columnDefinition = "TEXT", nullable = false)
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private String keyword;
 
     @NotNull
     @Column(nullable = false)
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long ImgIDs;
 
     private String createdDate = LocalDateTime.now().format(DateTimeFormatter.ofPattern("yyyy.MM.dd HH:mm"));
