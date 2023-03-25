@@ -25,6 +25,5 @@ public class User {
 
     @NotNull
     @Column(columnDefinition = "TEXT", nullable = false)
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private String NickName;
 }
