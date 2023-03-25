@@ -1,4 +1,4 @@
-package threefour.Arti.auth;
+package threeFour.ArtI.auth;
 
 public class User {
 }

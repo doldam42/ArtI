@@ -1,4 +1,4 @@
-package threefour.Arti;
+package threeFour.ArtI;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

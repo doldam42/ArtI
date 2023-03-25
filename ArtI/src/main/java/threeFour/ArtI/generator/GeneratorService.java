@@ -1,4 +1,4 @@
-package threefour.Arti.generator;
+package threeFour.ArtI.generator;
 
 public class GeneratorService {
 }

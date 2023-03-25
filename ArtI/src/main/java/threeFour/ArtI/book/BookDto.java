@@ -1,4 +1,4 @@
-package threefour.Arti.book;
+package threeFour.ArtI.book;
 
 public class BookDto {
 }

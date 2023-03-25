@@ -1,4 +1,4 @@
-package threefour.Arti.styler;
+package threeFour.ArtI.styler;
 
 public class StylerService {
 }
