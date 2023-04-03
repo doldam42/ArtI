@@ -1,6 +1,8 @@
 package threeFour.ArtI.book;
 
 import org.springframework.web.bind.annotation.*;
+import threeFour.ArtI.styler.Styler;
+import threeFour.ArtI.styler.StylerDto;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -13,19 +15,16 @@ public class BookController {
 
     /* 생성한 동화 리스트 */
     @GetMapping("/book")
-    public List<Book> getBookList(){
-        return new ArrayList<Book>(bookMap.values());
-    }
+    public List<BookDto> getBookList(){
+        List<BookDto> books = new ArrayList<>();
 
-    /* 특정 동화 불러오기 */
-    @GetMapping("/book/{id}")
-    public Book getBook(@PathVariable("id") Long id){
-        return bookMap.get(id);
-    }
-
-    /* 특정 동화 삭제하기 */
-    @DeleteMapping("/book/{id}")
-    public void deleteBook(@PathVariable("id") Long id){
-        bookMap.remove(id);
+        for (Book book : bookMap.values()) {
+            books.add(BookDto.builder()
+                    .ImgIDs(book.getImgIDs())
+                    .createdDate(book.getCreatedDate())
+                    .keyword(book.getKeyword())
+                    .id(book.getId()).build());
+        }
+        return books;
     }
 }

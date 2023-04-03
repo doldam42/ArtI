@@ -17,19 +17,14 @@ public class StylerController {
 
     /* 생성한 이미지 리스트 */
     @GetMapping("/styler")
-    public List<Styler> getStylerList(){
-        return new ArrayList<Styler>(stylerMap.values());
-    }
-
-    /* 특정 이미지 불러오기 */
-    @GetMapping("/styler/{id}")
-    public Styler getStyler(@PathVariable("id") Long id){
-        return stylerMap.get(id);
-    }
-
-    /* 특정 이미지 삭제하기*/
-    @DeleteMapping("/styler/{id}")
-    public void deleteStyler(@PathVariable("id") Long id){
-        stylerMap.remove(id);
+    public List<StylerDto> getStylerList(){
+        List<StylerDto> styles = new ArrayList<>();
+        for (Styler style : stylerMap.values()) {
+            styles.add(StylerDto.builder()
+                    .id(style.getId())
+                    .originImgId(style.getOriginImgId())
+                    .createdImgId(style.getCreatedImgId()).build());
+        }
+        return styles;
     }
 }
