@@ -9,6 +9,7 @@ import org.jetbrains.annotations.NotNull;
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
 @Builder
 @AllArgsConstructor
+@Table(name="ArtiUser")
 public class User {
     
     @Id
@@ -16,8 +17,8 @@ public class User {
     private Long id;
 
     @NotNull
-    @Column(nullable = false)
-    private String pwd;
+    @Column(columnDefinition = "TEXT", nullable = false)
+    private String password;
 
     @NotNull
     @Column(columnDefinition = "TEXT", nullable = false)
