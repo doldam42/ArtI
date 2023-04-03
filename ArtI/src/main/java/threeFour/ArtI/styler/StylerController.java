@@ -1,10 +1,7 @@
 package threeFour.ArtI.styler;
 
 import lombok.Getter;
-import org.springframework.web.bind.annotation.DeleteMapping;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -13,6 +10,7 @@ import java.util.Map;
 @RestController
 public class StylerController {
 
+    private StylerService stylerService;
     private Map<String, Styler> stylerMap;
 
     /* 생성한 이미지 리스트 */
@@ -26,5 +24,16 @@ public class StylerController {
                     .createdImgId(style.getCreatedImgId()).build());
         }
         return styles;
+    }
+
+    /* db에 새로 originId, createdId 를 만들고 가져오기 */
+    @GetMapping("/styler/new")
+    public StylerDto getNewStyler()
+    {
+        Styler newOne = stylerService.getNewStyler();
+        return StylerDto.builder()
+                .createdImgId(newOne.getCreatedImgId())
+                .originImgId(newOne.getOriginImgId())
+                .build();
     }
 }
