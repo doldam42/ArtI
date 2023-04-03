@@ -11,13 +11,12 @@ import java.util.Map;
 public class StylerController {
 
     private StylerService stylerService;
-    private Map<String, Styler> stylerMap;
 
     /* 생성한 이미지 리스트 */
     @GetMapping("/styler")
     public List<StylerDto> getStylerList(){
         List<StylerDto> styles = new ArrayList<>();
-        for (Styler style : stylerMap.values()) {
+        for (Styler style : stylerService.getStylerList()) {
             styles.add(StylerDto.builder()
                     .id(style.getId())
                     .originImgId(style.getOriginImgId())
